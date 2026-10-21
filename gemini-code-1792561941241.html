@@ -1,0 +1,122 @@
+<!DOCTYPE html>
+<html lang="uz">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Yangi sotuv | BILLZ Clone</title>
+    <link rel="stylesheet" href="style.css">
+    <!-- FontAwesome ikonkalari uchun -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+
+    <div class="app-container">
+        <!-- Chap panel (Asosiy qism) -->
+        <main class="main-content">
+            <!-- Qidiruv qismi -->
+            <div class="search-bar-wrapper">
+                <i class="fa-solid fa-magnifying-glass search-icon"></i>
+                <input type="text" id="search-input" placeholder="Artikul, shtrix-kod, nom bo'yicha qidirish..." autofocus>
+                <span class="shortcut-key">/</span>
+            </div>
+
+            <!-- Savatcha sarlavhasi -->
+            <div class="cart-header-row">
+                <div class="cart-title-area">
+                    <h2>Savatcha</h2>
+                    <span id="cart-count" class="badge">0</span>
+                </div>
+                <div class="cart-actions-row">
+                    <label class="toggle-switch">
+                        <span class="toggle-label">Ulgurji narxlar</span>
+                        <input type="checkbox" id="wholesale-toggle">
+                        <span class="slider round"></span>
+                    </label>
+                    <span class="order-number">#010002012236</span>
+                </div>
+            </div>
+
+            <!-- Sotuvchilar filteri -->
+            <div class="filter-row">
+                <button class="filter-btn active">Barcha sotuvchilar</button>
+            </div>
+
+            <!-- Savatcha ro'yxati yoki bo'sh holat -->
+            <div class="cart-body" id="cart-body">
+                <div class="empty-cart" id="empty-cart-state">
+                    <div class="empty-icon"><i class="fa-solid fa-cart-shopping"></i></div>
+                    <h3>Savatcha hozircha boʻsh</h3>
+                    <p>Tovarlarni qidirish uchun “/” tugmasini bosing yoki tovarlarni tanlang</p>
+                </div>
+                <table class="cart-table" id="cart-table" style="display: none;">
+                    <thead>
+                        <tr>
+                            <th>Nomi</th>
+                            <th>Narxi</th>
+                            <th>Miqdori</th>
+                            <th>Jami</th>
+                            <th></th>
+                        </tr>
+                    </thead>
+                    <tbody id="cart-items-list">
+                        <!-- JavaScript orqali to'ldiriladi -->
+                    </tbody>
+                </table>
+            </div>
+
+            <!-- Tezkor mahsulotlar (Namunaviy tovarlar bazasi) -->
+            <div class="sample-products">
+                <h4>Tezkor tovarlar (Qo'shish uchun bosing):</h4>
+                <div class="product-grid" id="product-grid">
+                    <!-- JS orqali mahsulotlar chiqadi -->
+                </div>
+            </div>
+        </main>
+
+        <!-- O'ng panel (Hisob-kitob va mijoz) -->
+        <aside class="sidebar">
+            <div class="sidebar-section client-section">
+                <div class="client-header">
+                    <span class="client-icon">J</span>
+                    <button class="create-client-btn">Yaratish</button>
+                </div>
+                <input type="text" placeholder="Mijozning ismi yoki raqami" class="sidebar-input">
+            </div>
+
+            <div class="sidebar-section">
+                <div class="promo-wrapper">
+                    <input type="text" placeholder="Promokod" class="sidebar-input">
+                </div>
+            </div>
+
+            <div class="sidebar-section">
+                <button class="note-btn">+ Eslatma qoʻshish</button>
+            </div>
+
+            <!-- Hisob-kitob yakuni -->
+            <div class="calculation-summary">
+                <div class="calc-row">
+                    <span>Oraliq jami</span>
+                    <span id="subtotal">0 UZS</span>
+                </div>
+                <div class="calc-row">
+                    <span>Chegirma</span>
+                    <span id="discount">0 UZS</span>
+                </div>
+                
+                <button class="pay-button" onclick="checkout()">
+                    <span>TOʻLASH</span>
+                    <span id="total-pay" class="pay-amount">0 UZS</span>
+                </button>
+
+                <button class="delay-button">
+                    <span>Kechiktirish</span>
+                    <span class="shortcut-key">O</span>
+                </button>
+            </div>
+        </aside>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
